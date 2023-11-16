@@ -704,6 +704,10 @@ function refreshData() {
 
           // --------- POPULATE ROUND BADGE CONTENT, ICON ---------
 
+         // var imageBaseUrl = "img/"; JAC old reference way
+
+          var imageBaseUrl = "https://cdn.jsdelivr.net/gh/jchoate49/DataTrac/img/"; // JAC added new variable for base path
+
           // get correct icon image - /img/icon-car-white.svg
           var iconFilename = "icon-car-black.svg";
 
@@ -743,9 +747,14 @@ function refreshData() {
           if (prod_class_underscored == "ira") {
             iconFilename = "icon-barchart-black.svg";
           }
-          $("#" + new_content_id + " .icon")
+
+        /*  $("#" + new_content_id + " .icon")
             .addClass("js_mod")
-            .attr("src", "img/" + iconFilename);
+                .attr("src", "img/" + iconFilename); JAC old reference way */        
+
+          $("#" + new_content_id + " .icon")
+                .addClass("js_mod")
+              .attr("src", imageBaseUrl + iconFilename);
 
           // populate the tooltips here
           // populate details link footnote - get <FootNoteText> from feed
